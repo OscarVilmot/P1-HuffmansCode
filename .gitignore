@@ -52,3 +52,11 @@ Mkfile.old
 dkms.conf
 
 Debug/
+
+.project
+
+.cproject
+
+*.xml
+
+*.prefs
