@@ -8,17 +8,50 @@
  * Compression program using Huffman Algorith, with trees and queues
  *
  */
-#include <stdlib.h>
-#include <stdio.h>
+#include "headers/structures.h"
+#include "headers/treesActions.h"
 
-
+void printTree(Node* a){
+	if(a != NULL){
+		printf("%d", a->data);
+		printTree(a->left);
+		printTree(a->right);
+	}
+}
 /**
  * \brief Program entry
  *
  * \return EXIT_SUCCESS - Normal stop from the program
  */
 int main(){
-	printf("test");
-
+	Node * base = createNode(0);
+	Node * tree = createNode(4);
+	base->left = tree;
+	tree->left = createNode(2);
+	tree->left->left = createNode(1);
+	tree->left->right = createNode(3);
+	tree->right = createNode(5);
+	printTree(base);
+	printf("oui");
+	rightRotation(&tree);
+	printTree(base);
 	return EXIT_SUCCESS;
 }
+
+/**
+ * 				4
+ * 		2				5
+ * 	1		3
+ *
+ *
+ * 				2
+ * 		1				4
+ * 					3		5
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
