@@ -1,5 +1,5 @@
 /**
- * \file treesActions.c
+ * \file filesActions.c
  * \brief Source where all tree-related function take places
  * \date 21 oct. 2020
  * \author Kylian.S, Tommy Lee.A, Joel.G, Jules.R, Oscar.V
@@ -25,10 +25,13 @@ int size_text(FILE* file){
 char* read_txt(){
     FILE* file = NULL;
     char* string;
-
+    printf("test1\n\n\n");
     file = fopen("../text.txt", "r");
 
+    printf("%d\n\n\n", size_text(file));
+
     if (file != NULL){
+    	printf("%d\n\n\n", size_text(file));
         string = malloc(sizeof(char)*size_text(file));
         fread(string, sizeof(char), size_text(file), file);
         fclose(file);

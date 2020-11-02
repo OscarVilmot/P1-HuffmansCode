@@ -1,5 +1,5 @@
 /**
- * \file treesActions.c
+ * \file text2bin.c
  * \brief Source where all tree-related function take places
  * \date 21 oct. 2020
  * \author Kylian.S, Tommy Lee.A, Joel.G, Jules.R, Oscar.V
