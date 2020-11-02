@@ -60,3 +60,7 @@ Debug/
 *.xml
 
 *.prefs
+
+.metadata/
+
+Release/

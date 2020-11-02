@@ -2,14 +2,18 @@
  * \file HuffmanCode.c
  * \brief The main source where the main function takes place
  * \date 21 oct. 2020
- * \author Kilian.S, TommyLee.A, Joel.G, Jules.R, Oscar.V
+ * \author Kylian.S, Tommy Lee.A, Joel.G, Jules.R, Oscar.V
  * \version 0.1
  *
  * Compression program using Huffman Algorith, with trees and queues
  *
  */
+
 #include "headers/structures.h"
+#include "headers/text2bin.h"
 #include "headers/treesActions.h"
+#include "headers/fileActions.h"
+
 
 void printTreePrefixe(Node* a){
 	if(a != NULL){
@@ -18,23 +22,23 @@ void printTreePrefixe(Node* a){
 		printTreePrefixe(a->right);
 	}
 }
+
 /**
  * \brief Program entry
  *
  * \return EXIT_SUCCESS - Normal stop from the program
  */
 int main(){
-	Node * tree = createNode(4);
-	tree->left = createNode(8);
-	tree->right = createNode(12);
-	tree->left->left = createNode(2);
-	tree->left->left->left = createNode(1);
-	tree->left->left->right = createNode(3);
-	tree->left->right = createNode(5);
-	printTreePrefixe(tree);
-	printf("BARRE\n");
-	rightRotation(&(tree->left));
-	printTreePrefixe(tree);
-	deleteTree(tree);
+	/*
+	char* a = "Alice was beginning to get very tired of \n sitting by her sister on the bank, and of having nothing to do";
+	printf("%s\n %s", a, text2bin(a));
+	*/
+	/*
+	char a = ' ';
+	printf("%c, %d, %s", a, (int)a, char2bin(a));
+	*/
+	char* a;
+	a = read_txt();
+	printf("%s, %s", a, text2bin(a));
 	return EXIT_SUCCESS;
 }
