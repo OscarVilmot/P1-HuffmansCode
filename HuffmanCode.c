@@ -11,11 +11,11 @@
 #include "headers/structures.h"
 #include "headers/treesActions.h"
 
-void printTree(Node* a){
+void printTreePrefixe(Node* a){
 	if(a != NULL){
-		printf("%d", a->data);
-		printTree(a->left);
-		printTree(a->right);
+		printf("%d\n", a->data);
+		printTreePrefixe(a->left);
+		printTreePrefixe(a->right);
 	}
 }
 /**
@@ -24,34 +24,17 @@ void printTree(Node* a){
  * \return EXIT_SUCCESS - Normal stop from the program
  */
 int main(){
-	Node * base = createNode(0);
 	Node * tree = createNode(4);
-	base->left = tree;
-	tree->left = createNode(2);
-	tree->left->left = createNode(1);
-	tree->left->right = createNode(3);
-	tree->right = createNode(5);
-	printTree(base);
-	printf("oui");
-	rightRotation(&tree);
-	printTree(base);
+	tree->left = createNode(8);
+	tree->right = createNode(12);
+	tree->left->left = createNode(2);
+	tree->left->left->left = createNode(1);
+	tree->left->left->right = createNode(3);
+	tree->left->right = createNode(5);
+	printTreePrefixe(tree);
+	printf("BARRE\n");
+	rightRotation(&(tree->left));
+	printTreePrefixe(tree);
+	deleteTree(tree);
 	return EXIT_SUCCESS;
 }
-
-/**
- * 				4
- * 		2				5
- * 	1		3
- *
- *
- * 				2
- * 		1				4
- * 					3		5
- *
- *
- *
- *
- *
- *
- *
- */

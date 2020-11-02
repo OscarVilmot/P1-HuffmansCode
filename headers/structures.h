@@ -12,9 +12,9 @@
 #include <stdio.h>
 
 typedef struct Node{
+	int data;
 	struct Node* left;
 	struct Node* right;
-	int data;
 } Node;
 
 #endif /* HEADERS_STRUCTURES_H_ */
