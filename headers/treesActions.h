@@ -1,8 +1,12 @@
-/*
- * treesActions.h
+/**
+ * \file HuffmanCode.c
+ * \brief The main source where the main function takes place
+ * \date 21 oct. 2020
+ * \author Kylian.S, Tommy Lee.A, Joel.G, Jules.R, Oscar.V
+ * \version 0.1
  *
- *  Created on: 21 oct. 2020
- *      Author: pasarco
+ * Compression program using Huffman Algorith, with trees and queues
+ *
  */
 
 #ifndef HEADERS_TREESACTIONS_H_

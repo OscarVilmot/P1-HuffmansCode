@@ -2,12 +2,13 @@
  * \file treesActions.c
  * \brief Source where all tree-related function take places
  * \date 21 oct. 2020
- * \author Kilian.S, TommyLee.A, Joel.G, Jules.R, Oscar.V
+ * \author Kylian.S, Tommy Lee.A, Joel.G, Jules.R, Oscar.V
  * \version 0.1
  *
  * Compression program using Huffman Algorith, with trees and queues
  *
  */
+
 #include "../headers/structures.h"
 
 /**
@@ -15,6 +16,7 @@
  *	Compare both of the integer in parameter
  * \return int
  */
+
 int max(int a, int b){
 	return (a>b)? a : b;
 }
@@ -24,6 +26,7 @@ int max(int a, int b){
  *	Create a Node with the value in the parameters
  * \return Node* Return the node created
  */
+
 Node* createNode(int value){
 	Node* tree = (Node*)malloc(sizeof(Node)); /*Allocate some space for the node*/
 	tree->left = NULL;
@@ -37,6 +40,7 @@ Node* createNode(int value){
  *	Delete the tree recursively
  * \return void
  */
+
 void deleteTree(Node* tree){
 	if(tree!=NULL){/*If the node exist*/
 		deleteTree(tree->right);
