@@ -23,7 +23,7 @@ static OccurrenceLetter* createOccurrenceLetter(char letter){
 static ElementOccurrenceLetter* createElementOccurrenceLetter(char letter){
     ElementOccurrenceLetter* newElementOccurrenceLetter = malloc(sizeof(ElementOccurrenceLetter));
     
-    newElementOccurrenceLetter->data = createElementOccurrenceLetter(letter);
+    newElementOccurrenceLetter->data = createOccurrenceLetter(letter);
     newElementOccurrenceLetter->next = NULL;
 
     return newElementOccurrenceLetter;
