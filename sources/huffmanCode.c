@@ -9,4 +9,26 @@
  *
  */
 
-#include "../headers/structures.h"
+#include "../headers/huffmanCode.h"
+
+static OccurrenceLetter* createOccurrenceLetter(char letter){
+    OccurrenceLetter* newOccurrenceLetter = malloc(sizeof(OccurrenceLetter));
+
+    newOccurrenceLetter->letter = letter;
+    newOccurrenceLetter->occurrence = 0;
+
+    return newOccurrenceLetter;
+}
+
+static ElementOccurrenceLetter* createElementOccurrenceLetter(char letter){
+    ElementOccurrenceLetter* newElementOccurrenceLetter = malloc(sizeof(ElementOccurrenceLetter));
+    
+    newElementOccurrenceLetter->data = createElementOccurrenceLetter(letter);
+    newElementOccurrenceLetter->next = NULL;
+
+    return newElementOccurrenceLetter;
+}
+
+void findOccurrenceLettersInText(ElementOccurrenceLetter** listOccurrenceLetters, char* text){
+
+}

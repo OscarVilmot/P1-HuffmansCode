@@ -8,14 +8,16 @@
 #ifndef HUFFMAN_CODE
 #define HUFFMAN_CODE
 
+#include <stdlib.h>
+
 typedef struct OccurrenceLetter{
     char letter;
     int occurrence;
 }OccurrenceLetter;
 
-typedef struct ElementSimplyLinkedList {
-    OccurrenceLetter data;
-    struct ElementSimplyLinkedList* next;
-}ElementSimplyLinkedList;
+typedef struct ElementOccurrenceLetter{
+    OccurrenceLetter* data;
+    struct ElementOccurrenceLetter* next;
+}ElementOccurrenceLetter;
 
 #endif
