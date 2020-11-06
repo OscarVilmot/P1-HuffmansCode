@@ -41,6 +41,5 @@ int main(){
 	a = read_txt();
 	if(a != NULL)
 		printf("%s, %s", a, text2bin(a));
-	printf("YOYOYO");
 	return 0;
 }
