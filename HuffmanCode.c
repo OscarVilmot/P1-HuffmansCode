@@ -39,6 +39,7 @@ int main(){
 	*/
 	char* a;
 	a = read_txt();
-	printf("%s, %s", a, text2bin(a));
-	return EXIT_SUCCESS;
+	if(a != NULL)
+		printf("%s, %s", a, text2bin(a));
+	return 0;
 }

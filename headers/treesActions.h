@@ -12,7 +12,7 @@
 #ifndef HEADERS_TREESACTIONS_H_
 #define HEADERS_TREESACTIONS_H_
 
-int max(int a, int b);
+int maxi(int a, int b);
 
 Node* createNode(int value);
 void deleteTree(Node* tree);
