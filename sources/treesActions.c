@@ -17,7 +17,7 @@
  * \return int
  */
 
-int max(int a, int b){
+int maxi(int a, int b){
 	return (a>b)? a : b;
 }
 

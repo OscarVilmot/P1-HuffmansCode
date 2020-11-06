@@ -55,13 +55,13 @@ char* char2bin(char letter){
 
 char* text2bin(char* a){
 	char b = a[0];
-	char* y = malloc(8*sizeof(char));
-	char* c = malloc(8*sizeof(a));
+	char* y = malloc(8 * sizeof(char));
+	char* c = malloc(8 * sizeof(a));
 	int i = 0;
-	while(b != '\0'){
+	while (b != '\0') {
 		y = char2bin(b);
-		for(int j = 0; j < 8; j++){
-			c[8*i + j] = y[j];
+		for (int j = 0; j < 8; j++) {
+			c[8 * i + j] = y[j];
 		}
 		i++;
 		b = a[i];
