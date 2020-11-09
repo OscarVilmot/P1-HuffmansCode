@@ -9,41 +9,42 @@
  *
  */
 
-#include "../headers/structures.h"
+#include "../includes/fileActions.h"
 
 int size_text(FILE* file){
     int size = 0;
     char c;
-    do{
+    /*
+    do {
         c = fgetc(file);
         if (c != EOF)	size++;
-    }while(c != EOF);
+    } while(c != EOF);
+    */
     rewind(file);
     return size;
 }
 
-char* read_txt(){
+char* read_txt() {
     FILE* file = NULL;
-    char* string;
+    char* string = "";
     printf("test1\n\n\n");
     file = fopen("../text.txt", "r");
 
     printf("%d\n\n\n", size_text(file));
 
-    if (file != NULL){
+    if (file != NULL) {
     	printf("%d\n\n\n", size_text(file));
         string = malloc(sizeof(char)*size_text(file));
         fread(string, sizeof(char), size_text(file), file);
         fclose(file);
     }
-    printf("%s", string);
     return string;
 }
 
-void write_txt(char* binary){
+void write_txt(char* binary) {
     FILE* file = NULL;
     file = fopen("../binary.txt", "w+");
-    if (file != NULL){
+    if (file != NULL) {
         fwrite(binary, sizeof(char), size_text(file), file);
         fclose(file);
     }
