@@ -9,7 +9,7 @@
  *
  */
 
-#include "../headers/structures.h"
+#include "../includes/fileActions.h"
 
 int size_text(FILE* file){
     int size = 0;

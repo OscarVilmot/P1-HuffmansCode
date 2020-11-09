@@ -9,7 +9,7 @@
  *
  */
 
-#include "../headers/structures.h"
+#include "../includes/treesActions.h"
 
 /**
  * \brief Maximum between 2 integers

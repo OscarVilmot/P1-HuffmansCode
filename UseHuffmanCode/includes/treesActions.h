@@ -12,6 +12,15 @@
 #ifndef HEADERS_TREESACTIONS_H_
 #define HEADERS_TREESACTIONS_H_
 
+#include <stdlib.h>
+
+typedef struct Node{
+	int data;
+	struct Node* left;
+	struct Node* right;
+} Node;
+
+
 int max(int a, int b);
 
 Node* createNode(int value);
