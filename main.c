@@ -9,11 +9,7 @@
  *
  */
 
-#include "headers/structures.h"
-#include "headers/text2bin.h"
-#include "headers/treesActions.h"
-#include "headers/fileActions.h"
-
+#include <./UseHuffmanCode/includes/treesActions.h>
 
 void printTreePrefixe(Node* a){
 	if(a != NULL){
