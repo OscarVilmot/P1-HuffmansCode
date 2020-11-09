@@ -10,20 +10,20 @@
  */
 #include "../includes/text2bin.h"
 
-char* char2bin(char letter){
+char* char2bin(char letter) {
     int letterToDec = (int)letter;
     char* decToBin = malloc(sizeof(char));
     int i = 7;
 
     // we convert the letter to binary
-    while (letterToDec != 0){
+    while (letterToDec != 0) {
         decToBin[i] = (char) letterToDec % 2 + 48;
         letterToDec /= 2;
         --i;
     }
 
     // then we add the zeros
-    while (i >= 0){
+    while (i >= 0) {
         decToBin[i] = '0';
         --i;
     }
@@ -31,15 +31,15 @@ char* char2bin(char letter){
     return decToBin;
 }
 
-char* text2bin(char* a){
+char* text2bin(char* a) {
 	char b = a[0];
-	char* y = malloc(8*sizeof(char));
-	char* c = malloc(8*sizeof(a));
+	char* y = malloc(8 * sizeof(char));
+	char* c = malloc(8 * sizeof(a));
 	int i = 0;
-	while(b != '\0'){
+	while (b != '\0'){
 		y = char2bin(b);
-		for(int j = 0; j < 8; j++){
-			c[8*i + j] = y[j];
+		for (int j = 0; j < 8; j++) {
+			c[8 * i + j] = y[j];
 		}
 		i++;
 		b = a[i];

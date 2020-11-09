@@ -17,7 +17,7 @@
  * \return int
  */
 
-int max(int a, int b){
+int maxi(int a, int b) {
 	return (a>b)? a : b;
 }
 
@@ -27,7 +27,7 @@ int max(int a, int b){
  * \return Node* Return the node created
  */
 
-Node* createNode(int value){
+Node* createNode(int value) {
 	Node* tree = (Node*)malloc(sizeof(Node)); /*Allocate some space for the node*/
 	tree->left = NULL;
 	tree->right = NULL; /*Make both branch point to nothing*/
@@ -41,8 +41,8 @@ Node* createNode(int value){
  * \return void
  */
 
-void deleteTree(Node* tree){
-	if(tree!=NULL){/*If the node exist*/
+void deleteTree(Node* tree) {
+	if(tree!=NULL) {/*If the node exist*/
 		deleteTree(tree->right);
 		deleteTree(tree->left);/*Free both of the branches*/
 		free(tree); /*Free the tree*/
@@ -54,7 +54,7 @@ void deleteTree(Node* tree){
  *	Calculate the height recursively
  * \return int return the height from the node
  */
-int heightTree(Node* tree){
+int heightTree(Node* tree) {
 	if(tree == NULL) return 0; /*If the tree doesn't exist we return a 0*/
 	else return 1 + max(heightTree(tree->left), heightTree(tree->right)); /*Else
  it return the maximum between both branch + 1, the actual node*/
@@ -65,8 +65,8 @@ int heightTree(Node* tree){
  *	It subtract the height of the right branch from the left one
  * \return int return the balancing factor from the node
  */
-int balFactorTree(Node* tree){
-	if(tree != NULL){/*If the tree exist*/
+int balFactorTree(Node* tree) {
+	if(tree != NULL) {/*If the tree exist*/
 		return  (heightTree(tree->left) - heightTree(tree->right)); /*Return
  the difference between both of the branches*/
 	}
@@ -78,7 +78,7 @@ int balFactorTree(Node* tree){
  *	Simply rotate the subtree to the right.
  * \return void
  */
-void rightRotation(Node** tree){
+void rightRotation(Node** tree) {
 	if(*tree != NULL && (*tree)->right != NULL && (*tree)->left != NULL){
 		Node* pivot = (*tree)->left;
 		(*tree)->left = pivot->right;
@@ -92,7 +92,7 @@ void rightRotation(Node** tree){
  *	Simply rotate the subtree to the left.
  * \return void
  */
-void leftRotation(Node** tree){
+void leftRotation(Node** tree) {
 	if(*tree != NULL && (*tree)->right != NULL && (*tree)->left != NULL){
 		Node* pivot = (*tree)->right;
 		(*tree)->right = pivot->left;

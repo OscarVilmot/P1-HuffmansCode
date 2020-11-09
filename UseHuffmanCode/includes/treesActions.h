@@ -14,14 +14,14 @@
 
 #include <stdlib.h>
 
-typedef struct Node{
+typedef struct Node {
 	int data;
 	struct Node* left;
 	struct Node* right;
 } Node;
 
 
-int max(int a, int b);
+int maxi(int a, int b);
 
 Node* createNode(int value);
 void deleteTree(Node* tree);
