@@ -56,7 +56,7 @@ void deleteTree(Node* tree) {
  */
 int heightTree(Node* tree) {
 	if(tree == NULL) return 0; /*If the tree doesn't exist we return a 0*/
-	else return 1 + max(heightTree(tree->left), heightTree(tree->right)); /*Else
+	else return 1 + maxi(heightTree(tree->left), heightTree(tree->right)); /*Else
  it return the maximum between both branch + 1, the actual node*/
 }
 

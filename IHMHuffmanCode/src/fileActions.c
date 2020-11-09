@@ -14,12 +14,10 @@
 int size_text(FILE* file){
     int size = 0;
     char c;
-    /*
     do {
         c = fgetc(file);
         if (c != EOF)	size++;
     } while(c != EOF);
-    */
     rewind(file);
     return size;
 }
@@ -27,13 +25,9 @@ int size_text(FILE* file){
 char* read_txt() {
     FILE* file = NULL;
     char* string = "";
-    printf("test1\n\n\n");
-    file = fopen("../text.txt", "r");
-
-    printf("%d\n\n\n", size_text(file));
-
+    file = fopen("text.txt", "r");
     if (file != NULL) {
-    	printf("%d\n\n\n", size_text(file));
+    	printf("%d\n", size_text(file));
         string = malloc(sizeof(char)*size_text(file));
         fread(string, sizeof(char), size_text(file), file);
         fclose(file);
