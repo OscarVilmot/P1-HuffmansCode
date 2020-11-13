@@ -8,3 +8,21 @@
  * Compression program using Huffman Algorith, with trees and queues
  *
  */
+#include <stdio.h>
+
+char* findLetterCode(char letter, FILE* dictionary) {
+	char letterCode[100];
+
+    while (fgetc(dictionary) != letter) {
+    	// we pass to the next letter in the next line
+    	while (fgetc(dictionary) != '\n') {
+    	}
+    }
+
+    // we set the cursor to the code
+    fseek(dictionary, 1, SEEK_CUR);
+
+    fscanf(dictionary, "%s", letterCode);
+
+    return letterCode;
+}
