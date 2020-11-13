@@ -5,8 +5,8 @@
  *      Author: ksauvee
  */
 
-#ifndef HUFFMAN_CODE
-#define HUFFMAN_CODE
+#ifndef OCCURRENCE
+#define OCCURRENCE
 
 #include <stdlib.h>
 
