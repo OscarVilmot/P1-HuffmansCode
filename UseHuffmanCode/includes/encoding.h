@@ -8,4 +8,8 @@
 #ifndef ENCODING
 #define ENCODING
 
+#include <stdio.h>
+
+void findTextEncoded(char* text, FILE* textEncoded, FILE* dictionary);
+
 #endif

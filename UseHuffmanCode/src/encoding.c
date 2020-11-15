@@ -10,7 +10,7 @@
  */
 #include <stdio.h>
 
-char* findLetterCode(char letter, FILE* dictionary) {
+static char* findLetterCode(char letter, FILE* dictionary) {
 	char letterCode[100];
 
     while (fgetc(dictionary) != letter) {
@@ -25,4 +25,16 @@ char* findLetterCode(char letter, FILE* dictionary) {
     fscanf(dictionary, "%s", letterCode);
 
     return letterCode;
+}
+
+void findTextEncoded(char* text, FILE* textEncoded, FILE* dictionary) {
+    int i = 0;
+    
+    while (text[i] != '\0') {
+        char* letterCode = findLetterCode(text[i], dictionary);
+
+        fprintf(textEncoded, letterCode);
+        fseek(dictionary, 0, SEEK_SET);
+        ++i;
+    }
 }
