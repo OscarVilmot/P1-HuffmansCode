@@ -8,8 +8,6 @@
 #ifndef HEADERS_TEXT2BIN_H_
 #define HEADERS_TEXT2BIN_H_
 
-char* char2bin(char letter);
-char* text2bin(char* a);
-
+extern void text2bin(char* text, char* textInBinary);
 
 #endif /* HEADERS_TEXT2BIN_H_ */
