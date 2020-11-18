@@ -10,9 +10,9 @@
 
 #include <stdio.h>
 
-int size_text(FILE* file);
-char* read_txt();
-void write_txt(char* binary);
+int findSizeText(FILE* file);
+char* readTxtFile(FILE* fileToRead);
+void writeInTxtFile(char* textToWriteInFile, FILE* fileToWrite);
 
 
 #endif /* FILEACTIONS_H_ */

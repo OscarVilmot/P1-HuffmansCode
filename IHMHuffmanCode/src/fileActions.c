@@ -8,38 +8,29 @@
  * Compression program using Huffman Algorith, with trees and queues
  *
  */
+#include <stdio.h>
+#include <stdlib.h>
 
-#include "../includes/fileActions.h"
-
-int size_text(FILE* file){
+int findSizeText(FILE* file){
     int size = 0;
-    char c;
-    do {
+    char c = fgetc(file);
+    
+    while (c != EOF) {
         c = fgetc(file);
-        if (c != EOF)	size++;
-    } while(c != EOF);
-    rewind(file);
+        ++size;
+    }
+    fseek(file, 0, SEEK_SET);
+
     return size;
 }
 
-char* read_txt() {
-    FILE* file = NULL;
-    char* string = "";
-    file = fopen("text.txt", "r");
-    if (file != NULL) {
-    	printf("%d\n", size_text(file));
-        string = malloc(sizeof(char)*size_text(file));
-        fread(string, sizeof(char), size_text(file), file);
-        fclose(file);
-    }
-    return string;
+char* readTxtFile(FILE* fileToRead) {
+    char* text = malloc(sizeof(char) * findSizeText(fileToRead));
+    fread(text, sizeof(char), findSizeText(fileToRead), fileToRead);
+
+    return text;
 }
 
-void write_txt(char* binary) {
-    FILE* file = NULL;
-    file = fopen("../binary.txt", "w+");
-    if (file != NULL) {
-        fwrite(binary, sizeof(char), size_text(file), file);
-        fclose(file);
-    }
+void writeInTxtFile(char* textToWriteInFile, FILE* fileToWrite) {
+    fwrite(textToWriteInFile, sizeof(char), findSizeText(fileToWrite), fileToWrite);
 }
