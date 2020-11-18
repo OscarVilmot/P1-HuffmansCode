@@ -11,22 +11,38 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../IHMHuffmanCode/includes/text2bin.h"
+#include "../../IHMHuffmanCode/includes/text2bin.h"
 
-void testLetterA(int testNumber) {
+void testLetterA() {
     char* text = "A";
     char* textinBinary = malloc(8 * sizeof(text));
 
     text2bin(text, textinBinary);
 
     if (strcmp(textinBinary, "01000001") == 0) {
-        printf("Test %d : Success", testNumber);
+        printf("Test 1 : Success");
     } else {
-        printf("Test %d : Failure", testNumber);
+        printf("Test 1 : Failure");
     }
+    printf("\n");
+}
+
+void testExclamationMark() {
+    char* text = "!";
+    char* textinBinary = malloc(8 * sizeof(text));
+
+    text2bin(text, textinBinary);
+
+    if (strcmp(textinBinary, "00100001") == 0) {
+        printf("Test 2 : Success");
+    } else {
+        printf("Test 2 : Failure");
+    }
+    printf("\n");
 }
 
 int main() {
-    testLetterA(1);
+    testLetterA();
+    testExclamationMark();
     return 0;
 }
