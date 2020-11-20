@@ -13,9 +13,10 @@
 #define HEADERS_TREESACTIONS_H_
 
 #include <stdlib.h>
+#include "./occurrence.h"
 
 typedef struct Node {
-	int data;
+	OccurrenceLetter* letterAndOccurrence;
 	struct Node* left;
 	struct Node* right;
 } Node;
