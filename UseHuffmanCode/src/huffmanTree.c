@@ -38,6 +38,6 @@ static OccurrenceLetter* findMinListOccurrences(ElementOccurrenceLetter* listOcc
         }
         current = current->next;
     }
-    
+    deleteElementInList(&listOccurrences, min);
     return min;
 }
