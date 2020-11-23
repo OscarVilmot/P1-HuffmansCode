@@ -9,7 +9,7 @@
  *
  */
 
-#include "../includes/huffmanCode.h"
+#include "../includes/occurrence.h"
 
 static OccurrenceLetter* createOccurrenceLetter(char letter){
     OccurrenceLetter* newOccurrenceLetter = malloc(sizeof(OccurrenceLetter));

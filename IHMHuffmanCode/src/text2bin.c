@@ -8,11 +8,10 @@
  * Compression program using Huffman Algorith, with trees and queues
  *
  */
-#include "../includes/text2bin.h"
+#include <string.h>
 
-char* char2bin(char letter) {
-    int letterToDec = (int)letter;
-    char* decToBin = malloc(sizeof(char));
+static void char2bin(char letter, char decToBin[9]) {
+    int letterToDec = (int) letter;
     int i = 7;
 
     // we convert the letter to binary
@@ -27,22 +26,15 @@ char* char2bin(char letter) {
         decToBin[i] = '0';
         --i;
     }
-
-    return decToBin;
 }
 
-char* text2bin(char* a) {
-	char b = a[0];
-	char* y = malloc(8 * sizeof(char));
-	char* c = malloc(8 * sizeof(a));
+void text2bin(char* text, char* textInBinary) {
 	int i = 0;
-	while (b != '\0'){
-		y = char2bin(b);
-		for (int j = 0; j < 8; j++) {
-			c[8 * i + j] = y[j];
-		}
-		i++;
-		b = a[i];
+    char characterInBinary[9];
+
+	while (text[i] != '\0') {
+		char2bin(text[i], characterInBinary);
+		strcat(textInBinary, characterInBinary);
+        ++i;
 	}
-	return c;
 }
