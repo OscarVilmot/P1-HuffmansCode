@@ -10,6 +10,6 @@
 
 #include <stdio.h>
 
-void findTextEncoded(char* text, FILE* textEncoded, FILE* dictionary);
+extern void findTextEncoded(char* text, FILE* textEncoded, FILE* dictionary);
 
 #endif
