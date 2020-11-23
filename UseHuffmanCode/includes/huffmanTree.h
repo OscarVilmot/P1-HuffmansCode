@@ -16,4 +16,6 @@ typedef struct Node {
     struct Node* left;
 }Node;
 
+extern Node* createHuffmanTree(ElementOccurrenceLetter** listOccurrences);
+
 #endif
