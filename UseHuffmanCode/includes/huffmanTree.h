@@ -8,10 +8,10 @@
 #ifndef HUFFMANTREE
 #define HUFFMANTREE
 
-#include "./occurrence.h"
+#include "occurrence.h"
 
 typedef struct Node {
-    OccurrenceLetter* letterAndOccurence;
+    OccurrenceLetter* letterAndOccurrence;
     struct Node* right;
     struct Node* left;
 }Node;
