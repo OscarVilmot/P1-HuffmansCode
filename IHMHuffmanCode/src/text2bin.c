@@ -34,7 +34,7 @@ void text2bin(char* text, char* textInBinary) {
 
 	while (text[i] != '\0') {
 		char2bin(text[i], characterInBinary);
-		strcat(textInBinary, characterInBinary);
+		strcat(textInBinary, &characterInBinary);
         ++i;
 	}
 }

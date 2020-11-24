@@ -8,7 +8,7 @@
  * Compression program using Huffman Algorith, with trees and queues
  *
  */
-#include "../includes/encoding.h"
+#include <stdio.h>
 
 static char* findLetterCode(char letter, FILE* dictionary) {
 	char letterCode[100];
