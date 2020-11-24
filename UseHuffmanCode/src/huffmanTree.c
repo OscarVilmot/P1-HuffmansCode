@@ -92,12 +92,21 @@ Node* createHuffmanTree(ElementOccurrenceLetter** listOccurrences) {
     return NULL;
 }
 
-void freeNode(Node* node) {
-    free(node->letterAndOccurrence);
-    node->letterAndOccurrence = NULL;
-    free(node);
-    node = NULL;
+static void freeNode(Node** node) {
+    if (*node != NULL) {
+        free((*node)->letterAndOccurrence);
+        (*node)->letterAndOccurrence = NULL;
+        free(*node);
+        *node = NULL;
+    }
 }
 
-void freeHuffmanTree(Node* huffmanTree) {
+void freeHuffmanTree(Node** huffmanTree) {
+    // we use double pointer in order to affect pointer to NULL
+    if (*huffmanTree != NULL) {
+        freeHuffmanTree(&(*huffmanTree)->left);
+        freeHuffmanTree(&(*huffmanTree)->right);
+        freeNode(huffmanTree);
+        *huffmanTree = NULL;
+    }
 }
