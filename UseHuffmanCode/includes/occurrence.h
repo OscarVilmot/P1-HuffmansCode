@@ -1,5 +1,5 @@
 /*
- * huffmanCode.h
+ * occurrence.h
  *
  *  Created on: 2 nov. 2020
  *      Author: ksauvee
@@ -7,8 +7,6 @@
 
 #ifndef OCCURRENCE
 #define OCCURRENCE
-
-#include <stdlib.h>
 
 typedef struct OccurrenceLetter{
     char letter;
