@@ -91,3 +91,13 @@ Node* createHuffmanTree(ElementOccurrenceLetter** listOccurrences) {
     }
     return NULL;
 }
+
+void freeNode(Node* node) {
+    free(node->letterAndOccurrence);
+    node->letterAndOccurrence = NULL;
+    free(node);
+    node = NULL;
+}
+
+void freeHuffmanTree(Node* huffmanTree) {
+}
