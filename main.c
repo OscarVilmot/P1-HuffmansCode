@@ -23,21 +23,32 @@
 #include "./UseHuffmanCode/includes/huffmanTree.h"
 #include "./UseHuffmanCode/includes/encoding.h"
 
-int main() {
+int main(void) {
 	FILE* text = fopen("text.txt", "r");
 	FILE* dictionary = fopen("dictionary.txt", "r");
-	FILE* textEncoded = fopen("textEncoded.txt", "w");
+	FILE* textEncoded = fopen("textEncoded.txt", "r+");
     
 	char* textInBinary = malloc(8 * findSizeText(text) * sizeof(char));
 	char* textInString = readTxtFile(text);
+	char* textEncodedInBinary = NULL;
+
+    // it will store the size saved by using the huffman algorithm
+	double sizeSaved = 0;
 	
 	ElementOccurrenceLetter* listOccurrences = NULL;
 
 	Node* huffmanTree = NULL;
-	text2bin(textInString, textInBinary);
+
+	// here we process the huffman algorithm
 	findOccurrenceLettersInText(&listOccurrences, textInString);
 	huffmanTree = createHuffmanTree(&listOccurrences);
 	findTextEncoded(textInString, textEncoded, dictionary);
+
+    // here we calculate the size saved by the huffman algorithm
+    text2bin(textInString, textInBinary);
+	textEncodedInBinary = readTxtFile(textEncoded);
+	sizeSaved = 100 - ((double) strlen(textEncodedInBinary) / (double) strlen(textInBinary)) * 100;
+	printf("We saved %f%% of size !\n", sizeSaved);
 
     fclose(text);
 	fclose(dictionary);
@@ -45,5 +56,5 @@ int main() {
 	free(textInBinary);
 	textInBinary = NULL;
     freeHuffmanTree(&huffmanTree);
-	return EXIT_SUCCESS;
+	return 0;
 }

@@ -1,5 +1,5 @@
 /*
- * huffmanCode.h
+ * encoding.h
  *
  *  Created on: 13 nov. 2020
  *      Author: ksauvee
