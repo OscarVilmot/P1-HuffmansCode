@@ -17,6 +17,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "./IHMHuffmanCode/includes/text2bin.h"
 #include "./IHMHuffmanCode/includes/fileActions.h"
 #include "./UseHuffmanCode/includes/occurrence.h"
@@ -54,7 +55,11 @@ int main(void) {
 	fclose(dictionary);
 	fclose(textEncoded);
 	free(textInBinary);
+	free(textInString);
+	free(textEncodedInBinary);
 	textInBinary = NULL;
+	textInString = NULL;
+	textEncodedInBinary = NULL;
     freeHuffmanTree(&huffmanTree);
 	return 0;
 }
