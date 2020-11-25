@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "./IHMHuffmanCode/includes/text2bin.h"
 #include "./IHMHuffmanCode/includes/fileActions.h"
 #include "./UseHuffmanCode/includes/occurrence.h"
@@ -35,15 +36,27 @@ int main(void) {
 
     // it will store the size saved by using the huffman algorithm
 	double sizeSaved = 0;
+	double compressionTime = 0;
 	
 	ElementOccurrenceLetter* listOccurrences = NULL;
 
 	Node* huffmanTree = NULL;
 
+	time_t secondsBeforeCompression;
+	time_t secondsAfterCompression;
+
+    printf("Compression Start\n");
+	time(&secondsBeforeCompression);
+
 	// here we process the huffman algorithm
 	findOccurrenceLettersInText(&listOccurrences, textInString);
 	huffmanTree = createHuffmanTree(&listOccurrences);
 	findTextEncoded(textInString, textEncoded, dictionary);
+	
+	printf("Compression End\n");
+	time(&secondsAfterCompression);
+	compressionTime = difftime(secondsAfterCompression, secondsBeforeCompression);
+	printf("Compression Time : %f sec\n", compressionTime);
 
     // here we calculate the size saved by the huffman algorithm
     text2bin(textInString, textInBinary);
