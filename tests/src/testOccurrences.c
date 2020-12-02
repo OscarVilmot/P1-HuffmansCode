@@ -22,8 +22,22 @@ void testFindListOccurrenceLettersNull(ElementOccurrenceLetter* occurrences) {
     printf("\n");
 }
 
+
+void testFindListOccurrenceLettersInCharacter(ElementOccurrenceLetter* occurrences) {
+    char* text = "a";
+    findOccurrenceLettersInText(&occurrences, text);
+
+    if (occurrences->data->letter == 'a' && occurrences->data->occurrence == 1) {
+        printf("Test 2 : SUCCESS");
+    } else {
+        printf("Test 2 : FAILURE");
+    }
+    printf("\n");
+}
+
 int main() {
     ElementOccurrenceLetter* listOccurrences = NULL;
     testFindListOccurrenceLettersNull(listOccurrences);
+    testFindListOccurrenceLettersInCharacter(listOccurrences);
     return 0;
 }
