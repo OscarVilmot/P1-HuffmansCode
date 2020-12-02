@@ -46,9 +46,10 @@ static void actualizeOccurrenceLetter(ElementOccurrenceLetter** listOccurrenceLe
 
 void findOccurrenceLettersInText(ElementOccurrenceLetter** listOccurrenceLetters, char* text){
     int i = 0;
-
-    while (text[i] != '\0'){
-        actualizeOccurrenceLetter(listOccurrenceLetters, text[i]);
-        ++i;
+    if (text != NULL) {
+        while (text[i] != '\0'){
+            actualizeOccurrenceLetter(listOccurrenceLetters, text[i]);
+            ++i;
+        }
     }
 }
