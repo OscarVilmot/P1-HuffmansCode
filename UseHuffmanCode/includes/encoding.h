@@ -1,5 +1,5 @@
 /*
- * huffmanCode.h
+ * encoding.h
  *
  *  Created on: 13 nov. 2020
  *      Author: ksauvee
@@ -10,6 +10,6 @@
 
 #include <stdio.h>
 
-void findTextEncoded(char* text, FILE* textEncoded, FILE* dictionary);
+extern void findTextEncoded(char* text, FILE* textEncoded, FILE* dictionary);
 
 #endif

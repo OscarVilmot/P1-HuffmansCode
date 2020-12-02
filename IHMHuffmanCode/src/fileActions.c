@@ -8,6 +8,7 @@
  * Compression program using Huffman Algorith, with trees and queues
  *
  */
+
 #include <stdio.h>
 #include <stdlib.h>
 

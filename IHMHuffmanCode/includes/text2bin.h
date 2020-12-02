@@ -1,5 +1,5 @@
 /*
- * text2bits.h
+ * text2bin.h
  *
  *  Created on: 2 nov. 2020
  *      Author: pasarco

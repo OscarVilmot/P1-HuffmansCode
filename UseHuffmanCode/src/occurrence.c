@@ -1,6 +1,6 @@
 /**
- * \file huffmanCode.c
- * \brief Source where all tree-related function take places
+ * \file occurrence.c
+ * \brief Source where all occurrence-related function take places
  * \date 21 oct. 2020
  * \author Kylian.S, Tommy Lee.A, Joel.G, Jules.R, Oscar.V
  * \version 0.1
@@ -9,10 +9,11 @@
  *
  */
 
+#include <stdlib.h>
 #include "../includes/occurrence.h"
 
 static OccurrenceLetter* createOccurrenceLetter(char letter){
-    OccurrenceLetter* newOccurrenceLetter = malloc(sizeof(OccurrenceLetter));
+    OccurrenceLetter* newOccurrenceLetter = (OccurrenceLetter*) malloc(sizeof(OccurrenceLetter));
 
     newOccurrenceLetter->letter = letter;
     newOccurrenceLetter->occurrence = 1;
@@ -21,7 +22,7 @@ static OccurrenceLetter* createOccurrenceLetter(char letter){
 }
 
 static ElementOccurrenceLetter* createElementOccurrenceLetter(char letter){
-    ElementOccurrenceLetter* newElementOccurrenceLetter = malloc(sizeof(ElementOccurrenceLetter));
+    ElementOccurrenceLetter* newElementOccurrenceLetter = (ElementOccurrenceLetter*) malloc(sizeof(ElementOccurrenceLetter));
     
     newElementOccurrenceLetter->data = createOccurrenceLetter(letter);
     newElementOccurrenceLetter->next = NULL;

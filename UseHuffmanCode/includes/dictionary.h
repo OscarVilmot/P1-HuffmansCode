@@ -1,5 +1,5 @@
 /*
- * huffmanCode.h
+ * dictionary.h
  *
  *  Created on: 18 nov. 2020
  *      Author: ksauvee

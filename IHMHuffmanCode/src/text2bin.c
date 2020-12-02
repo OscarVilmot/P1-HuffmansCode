@@ -8,7 +8,6 @@
  * Compression program using Huffman Algorith, with trees and queues
  *
  */
-#include <string.h>
 
 static void char2bin(char letter, char decToBin[9]) {
     int letterToDec = (int) letter;
@@ -34,7 +33,10 @@ void text2bin(char* text, char* textInBinary) {
 
 	while (text[i] != '\0') {
 		char2bin(text[i], characterInBinary);
-		strcat(textInBinary, characterInBinary);
+        // we fill each character of characterInBinary to the text by using this loop
+		for (int j = 0; j < 8; ++j) {
+            textInBinary[8 * i + j] = characterInBinary[j];
+        }
         ++i;
 	}
 }

@@ -8,6 +8,7 @@
  * Compression program using Huffman Algorith, with trees and queues
  *
  */
+
 #include <stdio.h>
 
 static char* findLetterCode(char letter, FILE* dictionary) {
@@ -33,7 +34,8 @@ void findTextEncoded(char* text, FILE* textEncoded, FILE* dictionary) {
     while (text[i] != '\0') {
         char* letterCode = findLetterCode(text[i], dictionary);
 
-        fprintf(textEncoded, letterCode);
+        fprintf(textEncoded, "%s", letterCode);
+        // we reset the dictionary's cursor at the beginning in order to check the letters before the last text's letter encoded
         fseek(dictionary, 0, SEEK_SET);
         ++i;
     }
