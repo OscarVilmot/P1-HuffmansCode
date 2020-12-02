@@ -49,9 +49,23 @@ void testFindListOccurrenceLettersInWord() {
     printf("\n");
 }
 
+void testFindListOccurrenceLettersInSentence() {
+    char* text = "Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do";
+    ElementOccurrenceLetter* occurrences = NULL;
+    findOccurrenceLettersInText(&occurrences, text);
+
+    if (findSizeOccurrences(occurrences) == 22) {
+        printf("TEST 4 : SUCCESS");
+    } else {
+        printf("TEST 4 : FAILURE");
+    }
+    printf("\n");
+}
+
 int main() {
     testFindListOccurrenceLettersNull();
     testFindListOccurrenceLettersInCharacter();
     testFindListOccurrenceLettersInWord();
+    testFindListOccurrenceLettersInSentence();
     return 0;
 }
