@@ -19,5 +19,6 @@ typedef struct ElementOccurrenceLetter{
 }ElementOccurrenceLetter;
 
 extern void findOccurrenceLettersInText(ElementOccurrenceLetter** listOccurrenceLetters, char* text);
+extern int findSizeOccurrences(ElementOccurrenceLetter* occurrences);
 
 #endif
