@@ -53,3 +53,12 @@ void findOccurrenceLettersInText(ElementOccurrenceLetter** listOccurrenceLetters
         }
     }
 }
+
+
+int findSizeOccurrences(ElementOccurrenceLetter* occurrences) {
+    if (occurrences == NULL) {
+        return 0;
+    } else {
+        return 1 + findSizeOccurrences(occurrences->next);
+    }
+}
