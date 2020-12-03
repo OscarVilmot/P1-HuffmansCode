@@ -62,6 +62,12 @@ int findSizeOccurrences(ElementOccurrenceLetter* occurrences) {
     }
 }
 
+void swapElement(ElementOccurrenceLetter* first, ElementOccurrenceLetter* second) {
+    OccurrenceLetter* temp = first->data;
+    first->data = second->data;
+    second->data = temp;
+}
+
 void bubbleSortListOccurrences(ElementOccurrenceLetter** occurrences, int sizeListOccurrences) {
     if (occurrences != NULL) {
         int isSwap;
@@ -74,7 +80,7 @@ void bubbleSortListOccurrences(ElementOccurrenceLetter** occurrences, int sizeLi
 
             while (current->next != limit) {
                 if (current->data->occurrence > current->next->data->occurrence) {
-                    swap(current, current->next);
+                    swapElement(current, current->next);
                     isSwap = 1;
                 }
                 current = current->next;
