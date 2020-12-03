@@ -46,9 +46,48 @@ static void actualizeOccurrenceLetter(ElementOccurrenceLetter** listOccurrenceLe
 
 void findOccurrenceLettersInText(ElementOccurrenceLetter** listOccurrenceLetters, char* text){
     int i = 0;
+    if (text != NULL) {
+        while (text[i] != '\0'){
+            actualizeOccurrenceLetter(listOccurrenceLetters, text[i]);
+            ++i;
+        }
+        int size = findSizeOccurrences(*listOccurrenceLetters);
+        bubbleSortListOccurrences(*listOccurrenceLetters, size);
+    }
+}
 
-    while (text[i] != '\0'){
-        actualizeOccurrenceLetter(listOccurrenceLetters, text[i]);
-        ++i;
+int findSizeOccurrences(ElementOccurrenceLetter* occurrences) {
+    if (occurrences == NULL) {
+        return 0;
+    } else {
+        return 1 + findSizeOccurrences(occurrences->next);
+    }
+}
+
+static void swapElement(ElementOccurrenceLetter* first, ElementOccurrenceLetter* second) {
+    OccurrenceLetter* temp = first->data;
+    first->data = second->data;
+    second->data = temp;
+}
+
+void bubbleSortListOccurrences(ElementOccurrenceLetter* occurrences, int sizeListOccurrences) {
+    if (occurrences != NULL) {
+        int isSwap;
+        ElementOccurrenceLetter* current;
+        ElementOccurrenceLetter* limit = NULL;
+
+        do {
+            isSwap = 0;
+            current = occurrences;
+
+            while (current->next != limit) {
+                if (current->data->occurrence > current->next->data->occurrence) {
+                    swapElement(current, current->next);
+                    isSwap = 1;
+                }
+                current = current->next;
+            }
+            limit = current;
+        } while (isSwap);
     }
 }
