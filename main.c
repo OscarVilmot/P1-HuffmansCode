@@ -64,7 +64,7 @@ int main(void) {
 		// here we calculate the size saved by the huffman algorithm
 		text2bin(textInString, textInBinary);
 		textEncodedInBinary = readTxtFile(textEncoded);
-		sizeSaved = 100 - ((double) strlen(textEncodedInBinary) / (double) strlen(textInBinary)) * 100;
+		// sizeSaved = 100 - ((double) strlen(textEncodedInBinary) / (double) strlen(textInBinary)) * 100;
 		printf("We saved %f%% of size !\n", sizeSaved);
 	
 		fclose(text);
@@ -77,6 +77,6 @@ int main(void) {
 		textInString = NULL;
 		textEncodedInBinary = NULL;
 		freeHuffmanTree(&huffmanTree);
-    }
+	}
 	return 0;
 }
