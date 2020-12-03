@@ -20,5 +20,6 @@ typedef struct ElementOccurrenceLetter{
 
 extern void findOccurrenceLettersInText(ElementOccurrenceLetter** listOccurrenceLetters, char* text);
 extern int findSizeOccurrences(ElementOccurrenceLetter* occurrences);
+extern void bubbleSortListOccurrences(ElementOccurrenceLetter* occurrences, int sizeListOccurrences);
 
 #endif

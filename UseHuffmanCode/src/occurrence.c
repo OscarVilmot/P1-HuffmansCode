@@ -61,16 +61,14 @@ int findSizeOccurrences(ElementOccurrenceLetter* occurrences) {
         return 1 + findSizeOccurrences(occurrences->next);
     }
 }
-<<<<<<< HEAD
-=======
 
-void swapElement(ElementOccurrenceLetter* first, ElementOccurrenceLetter* second) {
+static void swapElement(ElementOccurrenceLetter* first, ElementOccurrenceLetter* second) {
     OccurrenceLetter* temp = first->data;
     first->data = second->data;
     second->data = temp;
 }
 
-void bubbleSortListOccurrences(ElementOccurrenceLetter** occurrences, int sizeListOccurrences) {
+void bubbleSortListOccurrences(ElementOccurrenceLetter* occurrences, int sizeListOccurrences) {
     if (occurrences != NULL) {
         int isSwap;
         ElementOccurrenceLetter* current;
@@ -78,7 +76,7 @@ void bubbleSortListOccurrences(ElementOccurrenceLetter** occurrences, int sizeLi
 
         do {
             isSwap = 0;
-            current = *occurrences;
+            current = occurrences;
 
             while (current->next != limit) {
                 if (current->data->occurrence > current->next->data->occurrence) {
@@ -91,4 +89,3 @@ void bubbleSortListOccurrences(ElementOccurrenceLetter** occurrences, int sizeLi
         } while (isSwap);
     }
 }
->>>>>>> optimize_occurrence
