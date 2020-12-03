@@ -51,6 +51,8 @@ void findOccurrenceLettersInText(ElementOccurrenceLetter** listOccurrenceLetters
             actualizeOccurrenceLetter(listOccurrenceLetters, text[i]);
             ++i;
         }
+        int size = findSizeOccurrences(*listOccurrenceLetters);
+        bubbleSortListOccurrences(*listOccurrenceLetters, size);
     }
 }
 
