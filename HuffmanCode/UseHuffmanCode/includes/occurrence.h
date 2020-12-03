@@ -1,8 +1,9 @@
-/*
- * occurrence.h
- *
- *  Created on: 2 nov. 2020
- *      Author: ksauvee
+/**
+ * \file occurrence.h
+ * \brief Header of the module which create the occurrence list.
+ * \date November 2020
+ * \author Kylian.S, Tommy Lee.A, Joel.G, Jules.R, Oscar.V
+ * \version 1.0
  */
 
 #ifndef OCCURRENCE

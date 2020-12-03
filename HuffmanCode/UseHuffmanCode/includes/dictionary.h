@@ -1,14 +1,15 @@
-/*
- * dictionary.h
- *
- *  Created on: 18 nov. 2020
- *      Author: ksauvee
+/**
+ * \file dictionary.h
+ * \brief Header of the module which create the dictionary from the huffman tree.
+ * \date November 2020
+ * \author Kylian.S, Tommy Lee.A, Joel.G, Jules.R, Oscar.V
+ * \version 1.0
  */
 
 #ifndef DICTIONARY
 #define DICTIONARY
 
-void treeToDic(Node* tree, char* pos, FILE* dico);
-void mainDico(Node* tree, FILE* dico);
+extern void treeToDic(Node* tree, char* pos, FILE* dico);
+extern void mainDico(Node* tree, FILE* dico);
 
 #endif
