@@ -1,6 +1,6 @@
 /**
  * \file dictionary.h
- * \brief Header of the module which create the dictionary from the huffman tree.
+ * \brief Header of the module which creating the dictionary from the huffman tree.
  * \date November 2020
  * \author Kylian.S, Tommy Lee.A, Joel.G, Jules.R, Oscar.V
  * \version 1.0

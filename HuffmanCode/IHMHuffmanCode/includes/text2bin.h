@@ -1,8 +1,9 @@
-/*
- * text2bin.h
- *
- *  Created on: 2 nov. 2020
- *      Author: pasarco
+/**
+ * \file text2bin.h
+ * \brief Header of the module converting the text in binary.
+ * \date November 2020
+ * \author Kylian.S, Tommy Lee.A, Joel.G, Jules.R, Oscar.V
+ * \version 1.0
  */
 
 #ifndef HEADERS_TEXT2BIN_H_

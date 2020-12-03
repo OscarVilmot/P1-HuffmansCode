@@ -1,8 +1,9 @@
-/*
- * fileActions.h
- *
- *  Created on: 2 nov. 2020
- *      Author: pasarco
+/**
+ * \file fileActions.h
+ * \brief Header of the module allowing reading and writing in text files.
+ * \date November 2020
+ * \author Kylian.S, Tommy Lee.A, Joel.G, Jules.R, Oscar.V
+ * \version 1.0
  */
 
 #ifndef FILEACTIONS_H_

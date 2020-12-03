@@ -1,6 +1,6 @@
 /**
  * \file occurrence.h
- * \brief Header of the module which create the occurrence list.
+ * \brief Header of the module creating the occurrence list.
  * \date November 2020
  * \author Kylian.S, Tommy Lee.A, Joel.G, Jules.R, Oscar.V
  * \version 1.0

@@ -1,6 +1,6 @@
 /**
  * \file huffmanTree.h
- * \brief Header of the module which create the huffman tree.
+ * \brief Header of the module creating the huffman tree.
  * \date November 2020
  * \author Kylian.S, Tommy Lee.A, Joel.G, Jules.R, Oscar.V
  * \version 1.0
