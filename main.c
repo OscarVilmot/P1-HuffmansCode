@@ -29,50 +29,52 @@ int main(void) {
 	FILE* text = fopen("text.txt", "r");
 	FILE* dictionary = fopen("dictionary.txt", "r");
 	FILE* textEncoded = fopen("textEncoded.txt", "r+");
-    
-	char* textInBinary = malloc(8 * findSizeText(text) * sizeof(char));
-	char* textInString = readTxtFile(text);
-	char* textEncodedInBinary = NULL;
-
-    // it will store the size saved by using the huffman algorithm
-	double sizeSaved = 0;
-	double compressionTime = 0;
 	
-	ElementOccurrenceLetter* listOccurrences = NULL;
+    if(text != NULL && dictionary != NULL && textEncoded != NULL){
+		char* textInBinary = malloc(8 * findSizeText(text) * sizeof(char));
+		char* textInString = readTxtFile(text);
+		char* textEncodedInBinary = NULL;
 
-	Node* huffmanTree = NULL;
+		// it will store the size saved by using the huffman algorithm
+		double sizeSaved = 0;
+		double compressionTime = 0;
 
-	time_t secondsBeforeCompression;
-	time_t secondsAfterCompression;
+		ElementOccurrenceLetter* listOccurrences = NULL;
 
-    printf("Compression Start\n");
-	time(&secondsBeforeCompression);
+		Node* huffmanTree = NULL;
 
-	// here we process the huffman algorithm
-	findOccurrenceLettersInText(&listOccurrences, textInString);
-	huffmanTree = createHuffmanTree(&listOccurrences);
-	findTextEncoded(textInString, textEncoded, dictionary);
+		time_t secondsBeforeCompression;
+		time_t secondsAfterCompression;
+
+		printf("Compression Start\n");
+		time(&secondsBeforeCompression);
+
+		// here we process the huffman algorithm
+		findOccurrenceLettersInText(&listOccurrences, textInString);
+		huffmanTree = createHuffmanTree(&listOccurrences);
+		findTextEncoded(textInString, textEncoded, dictionary);
+
+		printf("Compression End\n");
+		time(&secondsAfterCompression);
+		compressionTime = difftime(secondsAfterCompression, secondsBeforeCompression);
+		printf("Compression Time : %f sec\n", compressionTime);
+
+		// here we calculate the size saved by the huffman algorithm
+		text2bin(textInString, textInBinary);
+		textEncodedInBinary = readTxtFile(textEncoded);
+		sizeSaved = 100 - ((double) strlen(textEncodedInBinary) / (double) strlen(textInBinary)) * 100;
+		printf("We saved %f%% of size !\n", sizeSaved);
 	
-	printf("Compression End\n");
-	time(&secondsAfterCompression);
-	compressionTime = difftime(secondsAfterCompression, secondsBeforeCompression);
-	printf("Compression Time : %f sec\n", compressionTime);
-
-    // here we calculate the size saved by the huffman algorithm
-    text2bin(textInString, textInBinary);
-	textEncodedInBinary = readTxtFile(textEncoded);
-	sizeSaved = 100 - ((double) strlen(textEncodedInBinary) / (double) strlen(textInBinary)) * 100;
-	printf("We saved %f%% of size !\n", sizeSaved);
-
-    fclose(text);
-	fclose(dictionary);
-	fclose(textEncoded);
-	free(textInBinary);
-	free(textInString);
-	free(textEncodedInBinary);
-	textInBinary = NULL;
-	textInString = NULL;
-	textEncodedInBinary = NULL;
-    freeHuffmanTree(&huffmanTree);
+		fclose(text);
+		fclose(dictionary);
+		fclose(textEncoded);
+		free(textInBinary);
+		free(textInString);
+		free(textEncodedInBinary);
+		textInBinary = NULL;
+		textInString = NULL;
+		textEncodedInBinary = NULL;
+		freeHuffmanTree(&huffmanTree);
+    }
 	return 0;
 }
