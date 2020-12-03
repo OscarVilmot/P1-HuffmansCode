@@ -11,9 +11,9 @@
 
 #include <stdio.h>
 
-int findSizeText(FILE* file);
-char* readTxtFile(FILE* fileToRead);
-void writeInTxtFile(char* textToWriteInFile, FILE* fileToWrite);
+extern int findSizeText(FILE* file);
+extern char* readTxtFile(FILE* fileToRead);
+extern void writeInTxtFile(char* textToWriteInFile, FILE* fileToWrite);
 
 
 #endif /* FILEACTIONS_H_ */

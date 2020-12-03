@@ -9,7 +9,6 @@
 #ifndef DICTIONARY
 #define DICTIONARY
 
-extern void treeToDic(Node* tree, char* pos, FILE* dico);
 extern void mainDico(Node* tree, FILE* dico);
 
 #endif

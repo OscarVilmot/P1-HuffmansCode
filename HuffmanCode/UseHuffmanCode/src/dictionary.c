@@ -4,15 +4,7 @@
 #include "../../IHMHuffmanCode/includes/fileActions.h"
 #include "../includes/huffmanTree.h"
 
-void treeToDic(Node* tree, char* pos, FILE* dico);
-
-void mainDico(Node* tree, FILE* dico){
-	char * pos = "";
-	treeToDic(tree, pos, dico);
-	rewind(dico);
-}
-
-void treeToDic(Node* tree, char* pos, FILE* dico){
+static void treeToDic(Node* tree, char* pos, FILE* dico){
 	if(tree == NULL) return;
 	else if(tree->left == NULL && tree->right == NULL){
 		char* letter = (char*)malloc(sizeof(char));
@@ -33,4 +25,10 @@ void treeToDic(Node* tree, char* pos, FILE* dico){
 		treeToDic(tree->left, left, dico);
 		free(left);
 	}
+}
+
+void mainDico(Node* tree, FILE* dico){
+	char * pos = "";
+	treeToDic(tree, pos, dico);
+	rewind(dico);
 }
