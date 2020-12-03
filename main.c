@@ -24,10 +24,11 @@
 #include "./UseHuffmanCode/includes/occurrence.h"
 #include "./UseHuffmanCode/includes/huffmanTree.h"
 #include "./UseHuffmanCode/includes/encoding.h"
+#include "./UseHuffmanCode/includes/dictionary.h"
 
 int main(void) {
 	FILE* text = fopen("text.txt", "r");
-	FILE* dictionary = fopen("dictionary.txt", "r");
+	FILE* dictionary = fopen("dictionary.txt", "w+");
 	FILE* textEncoded = fopen("textEncoded.txt", "r+");
 	
     if(text != NULL && dictionary != NULL && textEncoded != NULL){
@@ -52,6 +53,7 @@ int main(void) {
 		// here we process the huffman algorithm
 		findOccurrenceLettersInText(&listOccurrences, textInString);
 		huffmanTree = createHuffmanTree(&listOccurrences);
+		mainDico(huffmanTree, dictionary);
 		findTextEncoded(textInString, textEncoded, dictionary);
 
 		printf("Compression End\n");

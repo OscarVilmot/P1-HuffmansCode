@@ -33,5 +33,5 @@ char* readTxtFile(FILE* fileToRead) {
 }
 
 void writeInTxtFile(char* textToWriteInFile, FILE* fileToWrite) {
-    fwrite(textToWriteInFile, sizeof(char), findSizeText(fileToWrite), fileToWrite);
+    fputs(textToWriteInFile, fileToWrite);
 }

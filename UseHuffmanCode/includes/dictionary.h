@@ -8,6 +8,7 @@
 #ifndef DICTIONARY
 #define DICTIONARY
 
+void treeToDic(Node* tree, char* pos, FILE* dico);
+void mainDico(Node* tree, FILE* dico);
 
-
-#endif  
+#endif
