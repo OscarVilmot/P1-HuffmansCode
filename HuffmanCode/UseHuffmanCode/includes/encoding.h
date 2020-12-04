@@ -11,6 +11,16 @@
 
 #include <stdio.h>
 
+/**
+ * \brief Function to encode the text and put it in the textEncoded's file.
+ *        \n Example :
+ *         \code{.c}
+ *         findTextEncoded("This is a sentence", textEncoded, dictionary);
+ *         \endcode
+ * \param text the input text.
+ * \param textEncoded the output text encoded based on huffman algorithm.
+ * \param dictionary the dictionary containing the letter's codes.
+*/
 extern void findTextEncoded(char* text, FILE* textEncoded, FILE* dictionary);
 
 #endif

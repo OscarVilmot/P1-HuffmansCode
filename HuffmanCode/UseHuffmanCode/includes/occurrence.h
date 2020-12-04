@@ -27,6 +27,15 @@ typedef struct ElementOccurrenceLetter{
     struct ElementOccurrenceLetter* next;
 }ElementOccurrenceLetter;
 
+/**
+ * \brief Function to create an occurrences list based on the text.
+ *        \n Example :
+ *         \code{.c}
+ *         findOccurrenceLettersInText(occurrences, "This is a sentence");
+ *         \endcode
+ * \param listOccurrenceLetters the list of occurrences which is created with the text.
+ * \param text the text which help to create the list of occurrences.
+*/
 extern void findOccurrenceLettersInText(ElementOccurrenceLetter** listOccurrenceLetters, char* text);
 
 #endif

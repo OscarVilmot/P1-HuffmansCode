@@ -9,6 +9,15 @@
 #ifndef DICTIONARY
 #define DICTIONARY
 
+/**
+ * \brief Function to create the dictionary.
+ *        \n Example :
+ *         \code{.c}
+ *         mainDico(huffmanTree, dictionary);
+ *         \endcode
+ * \param tree the huffmanTree.
+ * \param dico the dictionary file.
+*/
 extern void mainDico(Node* tree, FILE* dico);
 
 #endif
