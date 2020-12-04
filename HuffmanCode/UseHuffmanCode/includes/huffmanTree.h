@@ -11,6 +11,10 @@
 
 #include "occurrence.h"
 
+/**
+ * \typedef struct Node
+ * \brief A Node is a binary tree element containing a struct OccurrenceLetter as the data.
+*/
 typedef struct Node {
     OccurrenceLetter* letterAndOccurrence;
     struct Node* right;

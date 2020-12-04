@@ -9,11 +9,19 @@
 #ifndef OCCURRENCE
 #define OCCURRENCE
 
+/**
+ * \typedef struct OccurrenceLetter
+ * \brief An OccurrenceLetter is a letter associated with its number of occurrences in the text.
+*/
 typedef struct OccurrenceLetter{
     char letter;
     int occurrence;
 }OccurrenceLetter;
 
+/**
+ * \typedef struct ElementOccurrenceLetter
+ * \brief An ElementOccurrenceLetter is a linked list element containing a struct OccurrenceLetter as the data.
+*/
 typedef struct ElementOccurrenceLetter{
     OccurrenceLetter* data;
     struct ElementOccurrenceLetter* next;
