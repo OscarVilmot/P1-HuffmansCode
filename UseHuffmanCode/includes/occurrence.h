@@ -20,6 +20,7 @@ typedef struct ElementOccurrenceLetter{
     struct ElementOccurrenceLetter* next;
 }ElementOccurrenceLetter;
 
+extern Node* createNode(char letter);
 extern void findOccurrenceLettersInText(ElementOccurrenceLetter** listOccurrenceLetters, char* text);
 
 #endif

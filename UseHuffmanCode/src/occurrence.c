@@ -21,7 +21,7 @@ static OccurrenceLetter* createOccurrenceLetter(char letter){
     return newOccurrenceLetter;
 }
 
-static Node* createNode(char letter) {
+Node* createNode(char letter) {
     Node* newNode = malloc(sizeof(Node));
 
     newNode->letterAndOccurrence = createOccurrenceLetter(letter);
