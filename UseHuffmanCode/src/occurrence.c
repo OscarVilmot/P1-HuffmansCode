@@ -21,10 +21,20 @@ static OccurrenceLetter* createOccurrenceLetter(char letter){
     return newOccurrenceLetter;
 }
 
+static Node* createNode(char letter) {
+    Node* newNode = malloc(sizeof(Node));
+
+    newNode->letterAndOccurrence = createOccurrenceLetter(letter);
+    newNode->left = NULL;
+    newNode->right = NULL;
+
+    return newNode;
+}
+
 static ElementOccurrenceLetter* createElementOccurrenceLetter(char letter){
     ElementOccurrenceLetter* newElementOccurrenceLetter = (ElementOccurrenceLetter*) malloc(sizeof(ElementOccurrenceLetter));
     
-    newElementOccurrenceLetter->data = createOccurrenceLetter(letter);
+    newElementOccurrenceLetter->data = createNode(letter);
     newElementOccurrenceLetter->next = NULL;
 
     return newElementOccurrenceLetter;
@@ -36,8 +46,8 @@ static void actualizeOccurrenceLetter(ElementOccurrenceLetter** listOccurrenceLe
         ElementOccurrenceLetter* newLetter = createElementOccurrenceLetter(letter);
         *listOccurrenceLetters = newLetter;
     }else{
-        if ((*listOccurrenceLetters)->data->letter == letter){
-            ++(*listOccurrenceLetters)->data->occurrence;
+        if ((*listOccurrenceLetters)->data->letterAndOccurrence->letter == letter){
+            ++(*listOccurrenceLetters)->data->letterAndOccurrence->occurrence;
         }else{
             actualizeOccurrenceLetter(&(*listOccurrenceLetters)->next, letter);
         }

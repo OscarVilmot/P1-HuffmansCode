@@ -12,20 +12,6 @@
 #include <stdlib.h>
 #include "../includes/huffmanTree.h"
 
-static Node* createNode() {
-    // first we allocate the memory for the OccurrenceLetter structure in order to avoid segmentation fault later on
-    OccurrenceLetter* newOccurrenceLetter = malloc(sizeof(OccurrenceLetter));
-    Node* newNode = malloc(sizeof(Node));
-
-    newOccurrenceLetter->letter = '\0';
-    newOccurrenceLetter->occurrence = 0;
-    newNode->letterAndOccurrence = newOccurrenceLetter;
-    newNode->left = NULL;
-    newNode->right = NULL;
-
-    return newNode;
-}
-
 static void deleteElementInList(ElementOccurrenceLetter** listOccurrences, OccurrenceLetter* element) {
     // we use a pointer to the listOccurrences (refToHead) in order to test the data of the next element
     ElementOccurrenceLetter* refToHead = malloc(sizeof(ElementOccurrenceLetter));
@@ -50,7 +36,7 @@ static OccurrenceLetter* findMinListOccurrences(ElementOccurrenceLetter** listOc
         ElementOccurrenceLetter* current = *listOccurrences;
 
         while (current != NULL) {
-            if (current->data->occurrence < min->occurrence) {
+            if (current->data->letterAndOccurrence->occurrence < min->occurrence) {
                 min = current->data;
             }
             current = current->next;
