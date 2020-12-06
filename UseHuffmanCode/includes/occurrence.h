@@ -8,21 +8,21 @@
 #ifndef OCCURRENCE
 #define OCCURRENCE
 
-typedef struct OccurrenceLetter{
+typedef struct OccurrenceLetter {
     char letter;
     int occurrence;
-}OccurrenceLetter;
+} OccurrenceLetter;
 
 typedef struct Node {
     OccurrenceLetter* letterAndOccurrence;
-    struct Node* right;
     struct Node* left;
-}Node;
+    struct Node* right;
+} Node;
 
-typedef struct ElementOccurrenceLetter{
+typedef struct ElementOccurrenceLetter {
     Node* data;
     struct ElementOccurrenceLetter* next;
-}ElementOccurrenceLetter;
+} ElementOccurrenceLetter;
 
 extern Node* createNode(char letter);
 extern ElementOccurrenceLetter* createElementOccurrenceLetter(char letter);
