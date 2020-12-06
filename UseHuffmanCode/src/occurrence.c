@@ -31,7 +31,7 @@ Node* createNode(char letter) {
     return newNode;
 }
 
-static ElementOccurrenceLetter* createElementOccurrenceLetter(char letter){
+ElementOccurrenceLetter* createElementOccurrenceLetter(char letter){
     ElementOccurrenceLetter* newElementOccurrenceLetter = (ElementOccurrenceLetter*) malloc(sizeof(ElementOccurrenceLetter));
     
     newElementOccurrenceLetter->data = createNode(letter);

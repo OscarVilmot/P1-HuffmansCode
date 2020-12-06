@@ -13,22 +13,25 @@
 #include "../includes/huffmanTree.h"
 
 static void deleteElementInList(ElementOccurrenceLetter** listOccurrences, ElementOccurrenceLetter* element) {
-    // we use a pointer to the listOccurrences (refToHead) in order to test the data of the next element
-    ElementOccurrenceLetter* refToHead = malloc(sizeof(ElementOccurrenceLetter));
-    refToHead->next = *listOccurrences;
-    ElementOccurrenceLetter* current = refToHead;
+    if (*listOccurrences != NULL) {
+        // we use a pointer to the listOccurrences (refToHead) in order to test the data of the next element
+        ElementOccurrenceLetter* refToHead = malloc(sizeof(ElementOccurrenceLetter));
+        refToHead->next = *listOccurrences;
+        ElementOccurrenceLetter* current = refToHead;
 
-    while (current->next->data != element->data) {
-        current = current->next;
+        while (current->next->data != element->data) {
+            current = current->next;
+        }
+        
+        current->next = current->next->next;
+        element->next = NULL;
+        *listOccurrences = refToHead->next;
+        free(refToHead);
     }
-
-    current->next = current->next->next;
-    *listOccurrences = refToHead->next;
-    free(refToHead);
 }
 
 static ElementOccurrenceLetter* findMinListOccurrences(ElementOccurrenceLetter** listOccurrences) {
-    if (*listOccurrences == NULL) {
+    if (listOccurrences == NULL) {
         return NULL;
     } else {
         ElementOccurrenceLetter* min = malloc(sizeof(ElementOccurrenceLetter));
@@ -37,7 +40,7 @@ static ElementOccurrenceLetter* findMinListOccurrences(ElementOccurrenceLetter**
 
         while (current != NULL) {
             if (current->data->letterAndOccurrence->occurrence < min->data->letterAndOccurrence->occurrence) {
-                min = current->data;
+                min = current;
             }
             current = current->next;
         }
@@ -49,23 +52,22 @@ static ElementOccurrenceLetter* findMinListOccurrences(ElementOccurrenceLetter**
 }
 
 Node* createHuffmanTree(ElementOccurrenceLetter** listOccurrences) {
-    OccurrenceLetter* min = findMinListOccurrences(listOccurrences);
-    OccurrenceLetter* min2 = findMinListOccurrences(listOccurrences);
-    ElementOccurrenceLetter* huffmanTree = createNode('\0');
+    ElementOccurrenceLetter* min = findMinListOccurrences(listOccurrences);
+    ElementOccurrenceLetter* min2 = findMinListOccurrences(listOccurrences);
 
     while (min != NULL && min2 != NULL) {
-        huffmanTree->data->left = min;
-        huffmanTree->data->right = min2;
-        huffmanTree->data->letterAndOccurrence->occurrence = min->occurrence + min2->occurrence;
+        ElementOccurrenceLetter* newNode = createElementOccurrenceLetter('\0');
+        newNode->data->left = min->data;
+        newNode->data->right = min2->data;
+        newNode->data->letterAndOccurrence->occurrence = min->data->letterAndOccurrence->occurrence + min2->data->letterAndOccurrence->occurrence;
 
-        huffmanTree->next = *listOccurrences;
-        listOccurrences = huffmanTree;
-
+        newNode->next = *listOccurrences;
+        *listOccurrences = newNode;
+        
         min = findMinListOccurrences(listOccurrences);
         min2 = findMinListOccurrences(listOccurrences);
-        ElementOccurrenceLetter* huffmanTree = createNode('\0');
     }
-    return huffmanTree;
+    return min->data;
 }
 
 static void freeNode(Node** node) {

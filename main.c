@@ -32,10 +32,10 @@ int main(void) {
 	FILE* textEncoded = fopen("textEncoded.txt", "r+");
 	
     if(text != NULL && dictionary != NULL && textEncoded != NULL){
+		
 		char* textInBinary = malloc(8 * findSizeText(text) * sizeof(char));
 		char* textInString = readTxtFile(text);
 		char* textEncodedInBinary = NULL;
-
 		// it will store the size saved by using the huffman algorithm
 		double sizeSaved = 0;
 		double compressionTime = 0;
@@ -64,9 +64,9 @@ int main(void) {
 		// here we calculate the size saved by the huffman algorithm
 		text2bin(textInString, textInBinary);
 		textEncodedInBinary = readTxtFile(textEncoded);
+		printf("%lu\n", strlen(textEncodedInBinary));
+		printf("%lu\n", strlen(textInString));
 		// sizeSaved = 100 - ((double) strlen(textEncodedInBinary) / (double) strlen(textInBinary)) * 100;
-		printf("We saved %f%% of size !\n", sizeSaved);
-	
 		fclose(text);
 		fclose(dictionary);
 		fclose(textEncoded);

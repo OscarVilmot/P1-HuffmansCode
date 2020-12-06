@@ -8,12 +8,16 @@
 #ifndef OCCURRENCE
 #define OCCURRENCE
 
-#include "huffmanTree.h"
-
 typedef struct OccurrenceLetter{
     char letter;
     int occurrence;
 }OccurrenceLetter;
+
+typedef struct Node {
+    OccurrenceLetter* letterAndOccurrence;
+    struct Node* right;
+    struct Node* left;
+}Node;
 
 typedef struct ElementOccurrenceLetter{
     Node* data;
@@ -21,6 +25,7 @@ typedef struct ElementOccurrenceLetter{
 }ElementOccurrenceLetter;
 
 extern Node* createNode(char letter);
+extern ElementOccurrenceLetter* createElementOccurrenceLetter(char letter);
 extern void findOccurrenceLettersInText(ElementOccurrenceLetter** listOccurrenceLetters, char* text);
 
 #endif
