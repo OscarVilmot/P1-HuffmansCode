@@ -69,3 +69,9 @@ Release/
 *.vcxproj
 *.filters
 *.user
+
+/.vs
+*.sln
+*.vcxproj
+*.filters
+*.user
