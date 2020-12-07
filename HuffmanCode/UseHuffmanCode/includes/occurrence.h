@@ -37,8 +37,26 @@ typedef struct ElementOccurrenceLetter{
     struct ElementOccurrenceLetter* next;
 }ElementOccurrenceLetter;
 
-
+/**
+ * \brief Function to create a node.
+ *        \n Example :
+ *         \code{.c}
+ *         Node* newNode = createNode('A');
+ *         \endcode
+ * \param letter the letter which contain the node.
+ * \return the Node's pointer.
+*/
 extern Node* createNode(char letter);
+
+/**
+ * \brief Function to create a struct ElementOccurrenceLetter.
+ *        \n Example :
+ *         \code{.c}
+ *         ElementOccurrenceLetter* Element = createElementOccurrenceLetter('A');
+ *         \endcode
+ * \param letter the letter which contain the Element->data.
+ * \return the ElementOccurrenceLetter's pointer.
+*/
 extern ElementOccurrenceLetter* createElementOccurrenceLetter(char letter);
 
 /**
