@@ -10,12 +10,6 @@
 
 #include "occurrence.h"
 
-typedef struct Node {
-    OccurrenceLetter* letterAndOccurrence;
-    struct Node* right;
-    struct Node* left;
-}Node;
-
 extern Node* createHuffmanTree(ElementOccurrenceLetter** listOccurrences);
 extern void freeHuffmanTree(Node** huffmanTree);
 
