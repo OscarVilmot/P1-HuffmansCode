@@ -1,7 +1,7 @@
 var indexSectionsWithContent =
 {
-  0: "cdefhmnortw",
-  1: "eno",
+  0: "cdefhmnoqrtw",
+  1: "enoq",
   2: "defhot",
   3: "cfmrtw",
   4: "eno"
@@ -19,7 +19,7 @@ var indexSectionNames =
 var indexSectionLabels =
 {
   0: "All",
-  1: "Data Structures",
+  1: "Classes",
   2: "Files",
   3: "Functions",
   4: "Typedefs"
