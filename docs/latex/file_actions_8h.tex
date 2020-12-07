@@ -1,23 +1,25 @@
-\hypertarget{file_actions_8h}{}\doxysection{Huffman\+Code/\+I\+H\+M\+Huffman\+Code/includes/file\+Actions.h File Reference}
-\label{file_actions_8h}\index{HuffmanCode/IHMHuffmanCode/includes/fileActions.h@{HuffmanCode/IHMHuffmanCode/includes/fileActions.h}}
+\hypertarget{file_actions_8h}{}\doxysection{M\+:/\+Algo/\+P1-\/\+Huffmans\+Code/\+Huffman\+Code/\+I\+H\+M\+Huffman\+Code/includes/file\+Actions.h File Reference}
+\label{file_actions_8h}\index{M:/Algo/P1-\/HuffmansCode/HuffmanCode/IHMHuffmanCode/includes/fileActions.h@{M:/Algo/P1-\/HuffmansCode/HuffmanCode/IHMHuffmanCode/includes/fileActions.h}}
 
 
 Header of the module allowing reading and writing in text files.  
 
 
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for file\+Actions.\+h\+:
+% FIG 0
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{file_actions_8h_a76ef3cffd06bb5f0d478756399c7ba7a}\label{file_actions_8h_a76ef3cffd06bb5f0d478756399c7ba7a}} 
-int {\bfseries find\+Size\+Text} (F\+I\+LE $\ast$file)
-\item 
-\mbox{\Hypertarget{file_actions_8h_a4405069688109800f361b647c127a8c9}\label{file_actions_8h_a4405069688109800f361b647c127a8c9}} 
-char $\ast$ {\bfseries read\+Txt\+File} (F\+I\+LE $\ast$file\+To\+Read)
-\item 
-\mbox{\Hypertarget{file_actions_8h_a883f6818f7d60baa1c125a81162ce5df}\label{file_actions_8h_a883f6818f7d60baa1c125a81162ce5df}} 
-void {\bfseries write\+In\+Txt\+File} (char $\ast$text\+To\+Write\+In\+File, F\+I\+LE $\ast$file\+To\+Write)
-\end{DoxyCompactItemize}
+int \mbox{\hyperlink{file_actions_8h_a76ef3cffd06bb5f0d478756399c7ba7a}{find\+Size\+Text}} (F\+I\+LE $\ast$file)
+\begin{DoxyCompactList}\small\item\em Function that find the size of the text in a file. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{file_actions_8h_a4405069688109800f361b647c127a8c9}{read\+Txt\+File}} (F\+I\+LE $\ast$file\+To\+Read)
+\begin{DoxyCompactList}\small\item\em Function that extract the text from a file. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{file_actions_8h_a883f6818f7d60baa1c125a81162ce5df}{write\+In\+Txt\+File}} (char $\ast$text\+To\+Write\+In\+File, F\+I\+LE $\ast$file\+To\+Write)
+\begin{DoxyCompactList}\small\item\em Function that put the text in a file. ~\newline
+ Example \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -32,3 +34,79 @@ Kylian.\+S, Tommy Lee.\+A, Joel.\+G, Jules.\+R, Oscar.\+V
 \begin{DoxyVersion}{Version}
 1.\+0 
 \end{DoxyVersion}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{file_actions_8h_a76ef3cffd06bb5f0d478756399c7ba7a}\label{file_actions_8h_a76ef3cffd06bb5f0d478756399c7ba7a}} 
+\index{fileActions.h@{fileActions.h}!findSizeText@{findSizeText}}
+\index{findSizeText@{findSizeText}!fileActions.h@{fileActions.h}}
+\doxysubsubsection{\texorpdfstring{findSizeText()}{findSizeText()}}
+{\footnotesize\ttfamily int find\+Size\+Text (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{file }\end{DoxyParamCaption})}
+
+
+
+Function that find the size of the text in a file. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{file_actions_8h_a76ef3cffd06bb5f0d478756399c7ba7a}{findSizeText}}(file);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em file} & the file where there is the text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+It return the number of caracters in the text. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{file_actions_8h_a4405069688109800f361b647c127a8c9}\label{file_actions_8h_a4405069688109800f361b647c127a8c9}} 
+\index{fileActions.h@{fileActions.h}!readTxtFile@{readTxtFile}}
+\index{readTxtFile@{readTxtFile}!fileActions.h@{fileActions.h}}
+\doxysubsubsection{\texorpdfstring{readTxtFile()}{readTxtFile()}}
+{\footnotesize\ttfamily char$\ast$ read\+Txt\+File (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{file\+To\+Read }\end{DoxyParamCaption})}
+
+
+
+Function that extract the text from a file. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{file_actions_8h_a4405069688109800f361b647c127a8c9}{readTxtFile}}(fileToRead);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em file\+To\+Read} & the file where there is the text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+It return the text, in a string. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{file_actions_8h_a883f6818f7d60baa1c125a81162ce5df}\label{file_actions_8h_a883f6818f7d60baa1c125a81162ce5df}} 
+\index{fileActions.h@{fileActions.h}!writeInTxtFile@{writeInTxtFile}}
+\index{writeInTxtFile@{writeInTxtFile}!fileActions.h@{fileActions.h}}
+\doxysubsubsection{\texorpdfstring{writeInTxtFile()}{writeInTxtFile()}}
+{\footnotesize\ttfamily void write\+In\+Txt\+File (\begin{DoxyParamCaption}\item[{char $\ast$}]{text\+To\+Write\+In\+File,  }\item[{F\+I\+LE $\ast$}]{file\+To\+Write }\end{DoxyParamCaption})}
+
+
+
+Function that put the text in a file. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{file_actions_8h_a883f6818f7d60baa1c125a81162ce5df}{writeInTxtFile}}(textToWriteInFile, fileToWrite);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em text\+To\+Write\+In\+File} & the text to put in the file. \\
+\hline
+{\em file\+To\+Write} & the file where to put the text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+V\+O\+ID. 
+\end{DoxyReturn}

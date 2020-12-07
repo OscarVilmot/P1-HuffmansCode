@@ -1,0 +1,14 @@
+digraph "M:/Algo/P1-HuffmansCode/HuffmanCode" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_51e4b9eb0ea096201cb56ff3ee83e945 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_51e4b9eb0ea096201cb56ff3ee83e945.html"];
+    dir_51e4b9eb0ea096201cb56ff3ee83e945 [shape=plaintext label="HuffmanCode"];
+    dir_5535427f6359164f20f4bbb18d956de7 [shape=box label="IHMHuffmanCode" color="red" fillcolor="white" style="filled" URL="dir_5535427f6359164f20f4bbb18d956de7.html"];
+    dir_192ac20876b6147c299f8dcbe5b8cc94 [shape=box label="UseHuffmanCode" color="red" fillcolor="white" style="filled" URL="dir_192ac20876b6147c299f8dcbe5b8cc94.html"];
+  }
+  dir_192ac20876b6147c299f8dcbe5b8cc94->dir_5535427f6359164f20f4bbb18d956de7 [headlabel="1", labeldistance=1.5 headhref="dir_000004_000001.html"];
+  dir_51e4b9eb0ea096201cb56ff3ee83e945->dir_192ac20876b6147c299f8dcbe5b8cc94 [headlabel="7", labeldistance=1.5 headhref="dir_000000_000004.html"];
+  dir_51e4b9eb0ea096201cb56ff3ee83e945->dir_5535427f6359164f20f4bbb18d956de7 [headlabel="3", labeldistance=1.5 headhref="dir_000000_000001.html"];
+}

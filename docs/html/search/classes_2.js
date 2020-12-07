@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['occurrenceletter_18',['OccurrenceLetter',['../struct_occurrence_letter.html',1,'']]]
+  ['occurrenceletter_22',['OccurrenceLetter',['../struct_occurrence_letter.html',1,'']]]
 ];

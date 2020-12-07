@@ -1,0 +1,10 @@
+digraph "readTxtFile"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="readTxtFile",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Function that extract the text from a file.   Example :"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="findSizeText",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$file_actions_8h.html#a76ef3cffd06bb5f0d478756399c7ba7a",tooltip="Function that find the size of the text in a file.   Example :"];
+}
