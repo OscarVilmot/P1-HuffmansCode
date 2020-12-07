@@ -1,0 +1,55 @@
+\hypertarget{encoding_8h}{}\doxysection{Huffman\+Code/\+Use\+Huffman\+Code/includes/encoding.h File Reference}
+\label{encoding_8h}\index{HuffmanCode/UseHuffmanCode/includes/encoding.h@{HuffmanCode/UseHuffmanCode/includes/encoding.h}}
+
+
+Header of the module encoding the input text with the dictionary.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{encoding_8h_a750e1e59ec9f865cbf9932dc6b4008cb}{find\+Text\+Encoded}} (char $\ast$text, F\+I\+LE $\ast$text\+Encoded, F\+I\+LE $\ast$dictionary)
+\begin{DoxyCompactList}\small\item\em Function to encode the text and put it in the text\+Encoded\textquotesingle{}s file. ~\newline
+ Example \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header of the module encoding the input text with the dictionary. 
+
+\begin{DoxyDate}{Date}
+November 2020 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Kylian.\+S, Tommy Lee.\+A, Joel.\+G, Jules.\+R, Oscar.\+V 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{encoding_8h_a750e1e59ec9f865cbf9932dc6b4008cb}\label{encoding_8h_a750e1e59ec9f865cbf9932dc6b4008cb}} 
+\index{encoding.h@{encoding.h}!findTextEncoded@{findTextEncoded}}
+\index{findTextEncoded@{findTextEncoded}!encoding.h@{encoding.h}}
+\doxysubsubsection{\texorpdfstring{findTextEncoded()}{findTextEncoded()}}
+{\footnotesize\ttfamily void find\+Text\+Encoded (\begin{DoxyParamCaption}\item[{char $\ast$}]{text,  }\item[{F\+I\+LE $\ast$}]{text\+Encoded,  }\item[{F\+I\+LE $\ast$}]{dictionary }\end{DoxyParamCaption})}
+
+
+
+Function to encode the text and put it in the text\+Encoded\textquotesingle{}s file. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{encoding_8h_a750e1e59ec9f865cbf9932dc6b4008cb}{findTextEncoded}}(\textcolor{stringliteral}{"{}This is a sentence"{}}, textEncoded, dictionary);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em text} & the input text. \\
+\hline
+{\em text\+Encoded} & the output text encoded based on huffman algorithm. \\
+\hline
+{\em dictionary} & the dictionary containing the letter\textquotesingle{}s codes. \\
+\hline
+\end{DoxyParams}
