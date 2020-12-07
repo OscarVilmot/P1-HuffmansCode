@@ -1,34 +1,6 @@
 #include <stdlib.h>
 #include "../includes/occurrence.h"
 
-static void swapElement(ElementOccurrenceLetter* first, ElementOccurrenceLetter* second) {
-    OccurrenceLetter* temp = first->data;
-    first->data = second->data;
-    second->data = temp;
-}
-
-void bubbleSortListOccurrences(ElementOccurrenceLetter* occurrences, int sizeListOccurrences) {
-    if (occurrences != NULL) {
-        int isSwap;
-        ElementOccurrenceLetter* current;
-        ElementOccurrenceLetter* limit = NULL;
-
-        do {
-            isSwap = 0;
-            current = occurrences;
-
-            while (current->next != limit) {
-                if (current->data->occurrence > current->next->data->occurrence) {
-                    swapElement(current, current->next);
-                    isSwap = 1;
-                }
-                current = current->next;
-            }
-            limit = current;
-        } while (isSwap);
-    }
-}
-
 static OccurrenceLetter* createOccurrenceLetter(char letter){
     OccurrenceLetter* newOccurrenceLetter = (OccurrenceLetter*) malloc(sizeof(OccurrenceLetter));
 
