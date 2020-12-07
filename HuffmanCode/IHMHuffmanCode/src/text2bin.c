@@ -1,14 +1,3 @@
-/**
- * \file text2bin.c
- * \brief Source where all tree-related function take places
- * \date 21 oct. 2020
- * \author Kylian.S, Tommy Lee.A, Joel.G, Jules.R, Oscar.V
- * \version 0.1
- *
- * Compression program using Huffman Algorith, with trees and queues
- *
- */
-
 static void char2bin(char letter, char decToBin[9]) {
     int letterToDec = (int) letter;
     int i = 7;
