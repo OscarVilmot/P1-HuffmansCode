@@ -64,6 +64,11 @@ Debug/
 .metadata/
 
 Release/
+/.vs
+*.sln
+*.vcxproj
+*.filters
+*.user
 
 /.vs
 *.sln
