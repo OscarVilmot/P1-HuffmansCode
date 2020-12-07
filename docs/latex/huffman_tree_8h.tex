@@ -1,0 +1,79 @@
+\hypertarget{huffman_tree_8h}{}\doxysection{Huffman\+Code/\+Use\+Huffman\+Code/includes/huffman\+Tree.h File Reference}
+\label{huffman_tree_8h}\index{HuffmanCode/UseHuffmanCode/includes/huffmanTree.h@{HuffmanCode/UseHuffmanCode/includes/huffmanTree.h}}
+
+
+Header of the module creating the huffman tree.  
+
+
+{\ttfamily \#include \char`\"{}occurrence.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{huffman_tree_8h_aa390ad8b5d50a2de3bce90754d450ab3}{create\+Huffman\+Tree}} (\mbox{\hyperlink{struct_element_occurrence_letter}{Element\+Occurrence\+Letter}} $\ast$$\ast$list\+Occurrences)
+\begin{DoxyCompactList}\small\item\em Function to create the huffman tree. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman_tree_8h_a000aedfe9e8315fcecb046e590ac9148}{free\+Huffman\+Tree}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$huffman\+Tree)
+\begin{DoxyCompactList}\small\item\em Function to free the huffman tree. ~\newline
+ Example \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header of the module creating the huffman tree. 
+
+\begin{DoxyDate}{Date}
+November 2020 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Kylian.\+S, Tommy Lee.\+A, Joel.\+G, Jules.\+R, Oscar.\+V 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{huffman_tree_8h_aa390ad8b5d50a2de3bce90754d450ab3}\label{huffman_tree_8h_aa390ad8b5d50a2de3bce90754d450ab3}} 
+\index{huffmanTree.h@{huffmanTree.h}!createHuffmanTree@{createHuffmanTree}}
+\index{createHuffmanTree@{createHuffmanTree}!huffmanTree.h@{huffmanTree.h}}
+\doxysubsubsection{\texorpdfstring{createHuffmanTree()}{createHuffmanTree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}}$\ast$ create\+Huffman\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_element_occurrence_letter}{Element\+Occurrence\+Letter}} $\ast$$\ast$}]{list\+Occurrences }\end{DoxyParamCaption})}
+
+
+
+Function to create the huffman tree. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_node}{Node}}* huffmanTree = \mbox{\hyperlink{huffman_tree_8h_aa390ad8b5d50a2de3bce90754d450ab3}{createHuffmanTree}}(occurrences);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em list\+Occurrence\+Letters} & the list of occurrences which is transform into the tree. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{struct_node}{Node}}\textquotesingle{}s pointer, if the huffman\+Tree is created. 
+
+{\ttfamily N\+U\+LL}, if the huffman\+Tree isn\textquotesingle{}t created. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{huffman_tree_8h_a000aedfe9e8315fcecb046e590ac9148}\label{huffman_tree_8h_a000aedfe9e8315fcecb046e590ac9148}} 
+\index{huffmanTree.h@{huffmanTree.h}!freeHuffmanTree@{freeHuffmanTree}}
+\index{freeHuffmanTree@{freeHuffmanTree}!huffmanTree.h@{huffmanTree.h}}
+\doxysubsubsection{\texorpdfstring{freeHuffmanTree()}{freeHuffmanTree()}}
+{\footnotesize\ttfamily void free\+Huffman\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$}]{huffman\+Tree }\end{DoxyParamCaption})}
+
+
+
+Function to free the huffman tree. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{huffman_tree_8h_a000aedfe9e8315fcecb046e590ac9148}{freeHuffmanTree}}(\&huffmanTree);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em huffman\+Tree} & is the huffman\+Tree\textquotesingle{}s address which is going to be freed. \\
+\hline
+\end{DoxyParams}
