@@ -1,0 +1,125 @@
+\hypertarget{occurrence_8h}{}\doxysection{Huffman\+Code/\+Use\+Huffman\+Code/includes/occurrence.h File Reference}
+\label{occurrence_8h}\index{HuffmanCode/UseHuffmanCode/includes/occurrence.h@{HuffmanCode/UseHuffmanCode/includes/occurrence.h}}
+
+
+Header of the module creating the occurrence list.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_occurrence_letter}{Occurrence\+Letter}}
+\item 
+struct \mbox{\hyperlink{struct_node}{Node}}
+\item 
+struct \mbox{\hyperlink{struct_element_occurrence_letter}{Element\+Occurrence\+Letter}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{occurrence_8h_ac4868b0d244ed7c957c077a2c33f78b2}\label{occurrence_8h_ac4868b0d244ed7c957c077a2c33f78b2}} 
+typedef struct \mbox{\hyperlink{struct_occurrence_letter}{Occurrence\+Letter}} \mbox{\hyperlink{occurrence_8h_ac4868b0d244ed7c957c077a2c33f78b2}{Occurrence\+Letter}}
+\begin{DoxyCompactList}\small\item\em An \mbox{\hyperlink{struct_occurrence_letter}{Occurrence\+Letter}} is a letter associated with its number of occurrences in the text. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{occurrence_8h_a9cf2efdb4ec5c59749c71c81ce1cf726}\label{occurrence_8h_a9cf2efdb4ec5c59749c71c81ce1cf726}} 
+typedef struct \mbox{\hyperlink{struct_node}{Node}} \mbox{\hyperlink{occurrence_8h_a9cf2efdb4ec5c59749c71c81ce1cf726}{Node}}
+\begin{DoxyCompactList}\small\item\em A \mbox{\hyperlink{struct_node}{Node}} is a binary tree element containing a struct \mbox{\hyperlink{struct_occurrence_letter}{Occurrence\+Letter}} as the data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{occurrence_8h_a542683a25e9b52f15b446243e845b0c5}\label{occurrence_8h_a542683a25e9b52f15b446243e845b0c5}} 
+typedef struct \mbox{\hyperlink{struct_element_occurrence_letter}{Element\+Occurrence\+Letter}} \mbox{\hyperlink{occurrence_8h_a542683a25e9b52f15b446243e845b0c5}{Element\+Occurrence\+Letter}}
+\begin{DoxyCompactList}\small\item\em An \mbox{\hyperlink{struct_element_occurrence_letter}{Element\+Occurrence\+Letter}} is a linked list element containing a struct \mbox{\hyperlink{struct_node}{Node}} as the data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{occurrence_8h_aabdb575d09efaa3ff0e24b8fc2aefdfe}{create\+Node}} (char letter)
+\begin{DoxyCompactList}\small\item\em Function to create a node. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_element_occurrence_letter}{Element\+Occurrence\+Letter}} $\ast$ \mbox{\hyperlink{occurrence_8h_aaa9b5d8d458f9fdf75da8a446b38ff53}{create\+Element\+Occurrence\+Letter}} (char letter)
+\begin{DoxyCompactList}\small\item\em Function to create a struct \mbox{\hyperlink{struct_element_occurrence_letter}{Element\+Occurrence\+Letter}}. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{occurrence_8h_a91acaf966308215c4da70f500f34bd44}{find\+Occurrence\+Letters\+In\+Text}} (\mbox{\hyperlink{struct_element_occurrence_letter}{Element\+Occurrence\+Letter}} $\ast$$\ast$list\+Occurrence\+Letters, char $\ast$text)
+\begin{DoxyCompactList}\small\item\em Function to create an occurrences list based on the text. ~\newline
+ Example \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header of the module creating the occurrence list. 
+
+\begin{DoxyDate}{Date}
+November 2020 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Kylian.\+S, Tommy Lee.\+A, Joel.\+G, Jules.\+R, Oscar.\+V 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{occurrence_8h_aaa9b5d8d458f9fdf75da8a446b38ff53}\label{occurrence_8h_aaa9b5d8d458f9fdf75da8a446b38ff53}} 
+\index{occurrence.h@{occurrence.h}!createElementOccurrenceLetter@{createElementOccurrenceLetter}}
+\index{createElementOccurrenceLetter@{createElementOccurrenceLetter}!occurrence.h@{occurrence.h}}
+\doxysubsubsection{\texorpdfstring{createElementOccurrenceLetter()}{createElementOccurrenceLetter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_element_occurrence_letter}{Element\+Occurrence\+Letter}}$\ast$ create\+Element\+Occurrence\+Letter (\begin{DoxyParamCaption}\item[{char}]{letter }\end{DoxyParamCaption})}
+
+
+
+Function to create a struct \mbox{\hyperlink{struct_element_occurrence_letter}{Element\+Occurrence\+Letter}}. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_element_occurrence_letter}{ElementOccurrenceLetter}}* Element = \mbox{\hyperlink{occurrence_8h_aaa9b5d8d458f9fdf75da8a446b38ff53}{createElementOccurrenceLetter}}(\textcolor{charliteral}{'A'});}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em letter} & the letter which contain the Element-\/$>$data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{struct_element_occurrence_letter}{Element\+Occurrence\+Letter}}\textquotesingle{}s pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{occurrence_8h_aabdb575d09efaa3ff0e24b8fc2aefdfe}\label{occurrence_8h_aabdb575d09efaa3ff0e24b8fc2aefdfe}} 
+\index{occurrence.h@{occurrence.h}!createNode@{createNode}}
+\index{createNode@{createNode}!occurrence.h@{occurrence.h}}
+\doxysubsubsection{\texorpdfstring{createNode()}{createNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}}$\ast$ create\+Node (\begin{DoxyParamCaption}\item[{char}]{letter }\end{DoxyParamCaption})}
+
+
+
+Function to create a node. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_node}{Node}}* newNode = \mbox{\hyperlink{occurrence_8h_aabdb575d09efaa3ff0e24b8fc2aefdfe}{createNode}}(\textcolor{charliteral}{'A'});}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em letter} & the letter which contain the node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{struct_node}{Node}}\textquotesingle{}s pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{occurrence_8h_a91acaf966308215c4da70f500f34bd44}\label{occurrence_8h_a91acaf966308215c4da70f500f34bd44}} 
+\index{occurrence.h@{occurrence.h}!findOccurrenceLettersInText@{findOccurrenceLettersInText}}
+\index{findOccurrenceLettersInText@{findOccurrenceLettersInText}!occurrence.h@{occurrence.h}}
+\doxysubsubsection{\texorpdfstring{findOccurrenceLettersInText()}{findOccurrenceLettersInText()}}
+{\footnotesize\ttfamily void find\+Occurrence\+Letters\+In\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_element_occurrence_letter}{Element\+Occurrence\+Letter}} $\ast$$\ast$}]{list\+Occurrence\+Letters,  }\item[{char $\ast$}]{text }\end{DoxyParamCaption})}
+
+
+
+Function to create an occurrences list based on the text. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{occurrence_8h_a91acaf966308215c4da70f500f34bd44}{findOccurrenceLettersInText}}(occurrences, \textcolor{stringliteral}{"{}This is a sentence"{}});}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em list\+Occurrence\+Letters} & the list of occurrences which is created with the text. \\
+\hline
+{\em text} & the text which help to create the list of occurrences. \\
+\hline
+\end{DoxyParams}
